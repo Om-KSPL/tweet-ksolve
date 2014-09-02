@@ -1,0 +1,8 @@
+development:
+  host:    localhost
+  adapter: postgresql
+  encoding: unicode
+  database: tweet_geo_h
+  pool: 5
+  username: postgres  
+  password: postgres
