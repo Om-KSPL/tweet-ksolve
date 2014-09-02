@@ -15,7 +15,8 @@ class LoginController < ApplicationController
   end
   def tweet
   	if current_user
-  		Resque.enqueue(TweetWorker,current_user.id) 
+  		#Resque.enqueue(TweetWorker,current_user.id) 
+  		current_user.post_tweet
   		flash[:message]="Your tweet is being posted.."
   	else
   		flash[:message]="Please login to conntinue.."
