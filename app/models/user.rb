@@ -21,8 +21,8 @@ class User < ActiveRecord::Base
 		client = Twitter::REST::Client.new do |config|
 	    	config.consumer_key        = TWITTER_APP_ID
 	      	config.consumer_secret     = TWITTER_SECRET
-	      	config.access_token        = current_user.oauth_token
-	      	config.access_token_secret = current_user.oauth_secret
+	      	config.access_token        = oauth_token
+	      	config.access_token_secret = oauth_secret
     	end
 	    uri = URI.parse(city.getImageUrl)
 	    media = uri.open
